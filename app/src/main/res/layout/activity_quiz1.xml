@@ -4,9 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimary"
     tools:context=".Quiz1">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correct answer:"
+        android:layout_marginLeft="40dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:textSize="18dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/5"
+        android:layout_marginLeft="170dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/question"
@@ -16,10 +38,10 @@
         android:layout_marginTop="148dp"
         android:fontFamily="@font/roboto_bold"
         android:gravity="center"
+        android:onClick="connection"
         android:text="Show Question"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        android:onClick="connection"/>
+        android:textSize="30dp" />
 
     <RelativeLayout
         android:id="@+id/choose1"

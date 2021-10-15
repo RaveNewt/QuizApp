@@ -22,6 +22,7 @@ public class Quiz1 extends AppCompatActivity {
     String selectionByUser = "";
     Button nextBtn;
     TextView question;
+    int correctCount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,9 +73,8 @@ public class Quiz1 extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             if(selectionByUser.equals(a.getText().toString())){
-                                String input = "0";
                                 Intent intent = new Intent(Quiz1.this, Quiz2.class);
-                                intent.putExtra("input", input);
+                                intent.putExtra("correct", 0);
                                 startActivity(intent);
                             }
                         }
@@ -97,9 +97,9 @@ public class Quiz1 extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             if(selectionByUser.equals(b.getText().toString())){
-                                String input = "20";
+                                correctCount += 1;
                                 Intent intent = new Intent(Quiz1.this, Quiz2.class);
-                                intent.putExtra("input", input);
+                                intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
                         }
@@ -122,9 +122,8 @@ public class Quiz1 extends AppCompatActivity {
                         public void onClick(View view) {
 
                             if(selectionByUser.equals(c.getText().toString())){
-                                String input = "0";
                                 Intent intent = new Intent(Quiz1.this, Quiz2.class);
-                                intent.putExtra("input", input);
+                                intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
                         }
@@ -147,9 +146,8 @@ public class Quiz1 extends AppCompatActivity {
                         public void onClick(View view) {
 
                             if(selectionByUser.equals(d.getText().toString())){
-                                String input = "20";
                                 Intent intent = new Intent(Quiz1.this, Quiz2.class);
-                                intent.putExtra("input", input);
+                                intent.putExtra("input", correctCount);
                                 startActivity(intent);
                             }
                         }

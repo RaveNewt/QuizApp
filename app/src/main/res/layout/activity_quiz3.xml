@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".Quiz2">
-
+    tools:context=".Quiz3">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +57,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/ic_abcd"
             android:fontFamily="@font/roboto_bold"
-            android:text="A. Spain"
+            android:text="A. Singapura"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -80,7 +79,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/ic_abcd"
             android:fontFamily="@font/roboto_bold"
-            android:text="B. Japan"
+            android:text="B. Spain"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -101,7 +100,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/ic_abcd"
             android:fontFamily="@font/roboto_bold"
-            android:text="C. Rusia"
+            android:text="C. Italia"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -123,7 +122,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/ic_abcd"
             android:fontFamily="@font/roboto_bold"
-            android:text="D. France"
+            android:text="D. Germany"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -139,4 +138,5 @@
         android:fontFamily="@font/roboto_bold"
         android:text="Next"
         android:textSize="18dp" />
+
 </RelativeLayout>

@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class Quiz2 extends AppCompatActivity {
+public class Quiz3 extends AppCompatActivity {
     AppCompatButton a,b,c,d;
     String selectionByUser = "";
     Button nextBtn;
@@ -27,7 +27,7 @@ public class Quiz2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz2);
+        setContentView(R.layout.activity_quiz3);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         a = findViewById(R.id.a);
@@ -75,7 +75,7 @@ public class Quiz2 extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             if(selectionByUser.equals(a.getText().toString())){
-                                Intent intent = new Intent(Quiz2.this, Quiz3.class);
+                                Intent intent = new Intent(Quiz3.this, Quiz4.class);
                                 intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
@@ -99,7 +99,7 @@ public class Quiz2 extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             if(selectionByUser.equals(b.getText().toString())){
-                                Intent intent = new Intent(Quiz2.this, Quiz3.class);
+                                Intent intent = new Intent(Quiz3.this, Quiz4.class);
                                 intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
@@ -123,7 +123,8 @@ public class Quiz2 extends AppCompatActivity {
                         public void onClick(View view) {
 
                             if(selectionByUser.equals(c.getText().toString())){
-                                Intent intent = new Intent(Quiz2.this, Quiz3.class);
+                                correctCount += 1;
+                                Intent intent = new Intent(Quiz3.this, Quiz4.class);
                                 intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
@@ -147,8 +148,7 @@ public class Quiz2 extends AppCompatActivity {
                         public void onClick(View view) {
 
                             if(selectionByUser.equals(d.getText().toString())){
-                                correctCount += 1;
-                                Intent intent = new Intent(Quiz2.this, Quiz3.class);
+                                Intent intent = new Intent(Quiz3.this, Quiz4.class);
                                 intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
@@ -157,14 +157,13 @@ public class Quiz2 extends AppCompatActivity {
                 }
             }
         });
-
     }
     private void revealAnswer(){
         a = findViewById(R.id.a);
         b = findViewById(R.id.b);
         c = findViewById(R.id.c);
         d = findViewById(R.id.d);
-        final String getAnswer = d.getText().toString();
+        final String getAnswer = c.getText().toString();
 
         if(a.getText().toString().equals(getAnswer)){
             a.setBackgroundResource(R.drawable.ic_right_button);
@@ -184,7 +183,7 @@ public class Quiz2 extends AppCompatActivity {
         question = (TextView) findViewById(R.id.question);
         String s = "";
         try {
-            URL url = new URL("https://mm2021.000webhostapp.com/IMM/question2.php");
+            URL url = new URL("https://mm2021.000webhostapp.com/IMM/question3.php");
             URLConnection ucon = url.openConnection();
             InputStream in = ucon.getInputStream();
             InputStreamReader isw = new InputStreamReader(in);

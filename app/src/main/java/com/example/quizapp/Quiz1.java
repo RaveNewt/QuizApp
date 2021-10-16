@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+
 public class Quiz1 extends AppCompatActivity {
     AppCompatButton a,b,c,d;
     String selectionByUser = "";
@@ -35,29 +36,6 @@ public class Quiz1 extends AppCompatActivity {
         d = findViewById(R.id.d);
         question = findViewById(R.id.question);
         nextBtn = findViewById(R.id.next_btn);
-        /*question.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s ="";
-                try{
-                    URL url = new URL("https://mm2021.000webhostapp.com/IMM/question1.php");
-                    URLConnection ucon = url.openConnection();
-                    InputStream in = ucon.getInputStream();
-                    InputStreamReader isw = new InputStreamReader(in);
-                    int data = isw.read();
-                    while(data!= -1){
-                        char current = (char) data;
-                        s = s + current;
-                        data = isw.read();
-                    }
-
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-                question.setText(s);
-            }
-        });*/
-
 
         a.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +52,7 @@ public class Quiz1 extends AppCompatActivity {
                         public void onClick(View view) {
                             if(selectionByUser.equals(a.getText().toString())){
                                 Intent intent = new Intent(Quiz1.this, Quiz2.class);
-                                intent.putExtra("correct", 0);
+                                intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
                         }
@@ -147,7 +125,7 @@ public class Quiz1 extends AppCompatActivity {
 
                             if(selectionByUser.equals(d.getText().toString())){
                                 Intent intent = new Intent(Quiz1.this, Quiz2.class);
-                                intent.putExtra("input", correctCount);
+                                intent.putExtra("correct", correctCount);
                                 startActivity(intent);
                             }
                         }
@@ -173,7 +151,7 @@ public class Quiz1 extends AppCompatActivity {
         b = findViewById(R.id.b);
         c = findViewById(R.id.c);
         d = findViewById(R.id.d);
-        final String getAnswer = "B. Berlin";
+        final String getAnswer = b.getText().toString();
 
         if(a.getText().toString().equals(getAnswer)){
             a.setBackgroundResource(R.drawable.ic_right_button);
